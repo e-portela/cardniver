@@ -3,7 +3,7 @@
 
 body {
 	font-family: 'Indie Flower', cursive !important;
-  background: rgb(117, 169, 218); /*CAPE HONEY*/
+  background: rgb(188, 24, 12); /*CAPE HONEY*/
 	margin: 0px;
 	padding: 0px;
 }
@@ -48,7 +48,7 @@ h4 {
 	left: 0;
 	width: 100%;
 	height: 5px;
-	background: #9674e4;
+	background: #000000;
 	transform-origin: bottom;
 	transform: skewX(-45deg);
 }
@@ -108,11 +108,12 @@ h4 {
 }
 
 .card .details p {
-	font-size: 15px;
-	line-height: 5px;
-	transform: rotate(-10deg);
-	padding: 0 0 0 20px;
+    font-size: 15px;
+    line-height: 5px;
+    padding: 0 0 0 20px;
+    transform: none; 
 }
+
 
 .card .details h4 {
 	text-align: center;
@@ -120,4 +121,22 @@ h4 {
 
 .text-right {
 	text-align: right;
+}.imgBox {
+    position: relative;
+    overflow: hidden; 
+}
+
+.imgBox::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: 1s ease-in-out;
+}
+
+.card:hover .imgBox::before {
+    top: 100%;
 }
